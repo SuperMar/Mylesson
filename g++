@@ -1,0 +1,4 @@
+g++ -E 1.cc -o 1.i
+g++ -S 1.cc -o 1.s
+g++ -c 1.cc -o 1.o
+g++ 1.o -o 1.out
