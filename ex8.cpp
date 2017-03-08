@@ -21,9 +21,9 @@ int main()
   *cptr1 = 3.0;
   
   int errNumb = 0;
-  int *const curErr = &errNumb; //常量指针
+  int *const curErr = &errNumb; //常量指针(顶层const)
   const double pi = 3.14159;
-  const double *const pip = &pi; //指向常量的常量指针
+  const double *const pip = &pi; //指向常量的常量指针(底层const + 顶层const)
   *curErr = 10;
   
   return 0;
