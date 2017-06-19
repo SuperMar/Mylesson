@@ -1,0 +1,16 @@
+#include<vector>
+using std::vector;
+vector<int> ivec;
+vector<Sales_item> Sales_vec;
+vector<vector<string>> file;
+
+vector能包含绝大多数的对象作为其元素，但因为引用不是对象，所以不存在包含引用的vector
+
+初始化vector对象的方法:
+vector<T> v1             v1是个空的vector,执行默认初始化
+vector<T> v2(v1)         v2中包含v1所有元素的副本
+vector<T> v2 = v1        等价与v2(v1),v2中包含有v1所有元素的副本
+vector<T> v3(n, val)     v3包含了n个重复的元素,每个元素的值都是val
+vector<T> v4(n)          v4包含了n个重复地执行了值初始化的对象
+vector<T> v5{a,b,c...}   v5包含了初始值个数的元素,每个元素被赋予相应的初始值
+vector<T> v5 = {a,}
