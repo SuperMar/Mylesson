@@ -26,6 +26,6 @@ vector<T> v5 = {a,b,c...}等价于v5{a,b,c...}
 
   string word;
   vector<string> text;
-  while(cin >> word){
+  while(cin >> word) {
       text.push_back(word);
   }
