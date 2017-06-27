@@ -53,3 +53,6 @@ iter->mem         解引用iter并获取该元素的名为mem的成员,等价于
 iter1 == iter2    如果两个迭代器指示的同一个元素或者它们是同一个容器的尾后迭代器,则相等;反之,则不相等
 iter1 != iter2 
 
+迭代器类型:
+vector<T>::iterator it;         it能读写vector<T>的元素
+vector<T>::const_iterator it;   it只能读元素,不能写元素
