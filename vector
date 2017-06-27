@@ -29,3 +29,16 @@ vector<T> v5 = {a,b,c...}等价于v5{a,b,c...}
   while(cin >> word) {
       text.push_back(word);
   }
+  
+注:范围for语句体内不应改变其所遍历序列的大小
+
+其他vector操作:
+v.empty()
+v.size()
+v.push_back(t)
+v[n]
+v1 = v2
+v1 = (a,b,c...)
+v1 == v2
+v1 != v2
+<, <=, >, >=
