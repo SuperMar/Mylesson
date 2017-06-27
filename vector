@@ -47,4 +47,8 @@ v1 != v2
 auto b = v.begin(), e = v.end(); //尾后迭代器
 
 *iter             返回迭代器iter所指的元素
-iter->mem         解引用iter并获取该元素的名为mem的成员,等价于
+iter->mem         解引用iter并获取该元素的名为mem的成员,等价于(*iter).mem
+++iter            令iter指向容器中的下一个元素
+--iter            令iter指向容器中的上一个元素
+iter1 == iter2    如果两个迭代器指示的同一个元素或者它们是同一个容器的尾后迭代器,则相等;反之,则不相等
+iter1 != iter2 
