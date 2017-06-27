@@ -56,3 +56,6 @@ iter1 != iter2
 迭代器类型:
 vector<T>::iterator it;         it能读写vector<T>的元素
 vector<T>::const_iterator it;   it只能读元素,不能写元素
+
+auto it = v.cbegin();     //it类型为vector<int>::const_iterator
+auto it = v.cend();
