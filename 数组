@@ -45,3 +45,33 @@ C风格字符串:(cstring头文件是C语言头文件的string.h的C++版本)
           
 char ca[] = {'C', '+', '+'};
 cout << strlen(ca) << endl;   //错误,ca没有以空字符结束
+
+string对象
+string s1 = "A string example";
+string s2 = "A different string";
+if (s1 < s2)  //false:s2小于s1
+
+C风格字符串
+const char ca1[] = "A string example";
+const char ca2[] = "A different string";
+if (ca1 < ca2)  //未定义的:试图比较两个无关地址
+if(strcmp(ca1, ca2) < 0) 和两个string对象的比较s1 < s2效果一样
+
+string对象
+string largeStr = s1 + " " + s2;
+
+C风格字符串
+strcpy(largeStr,ca1);
+strcat(largeStr," ");
+strcat(lagerStr,ca2);
+
+对于大多数应用来说,使用标准库string要比使用C风格字符串更安全,更高效
+
+与旧代码的接口:
+string s("Hello World");
+char *str = s;    //错误,不能用string对象来初始化char*
+const char *str = s.c_str();   //正确
+
+不允许使用vector对象来初始化数组,允许使用数组来初始化vector对象
+int int_arr[] = {0,1,2,3,4,5};
+vector<int> ivec{begin(int_arr), end(int_arr)};
