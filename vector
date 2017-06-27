@@ -18,3 +18,14 @@ vector<T> v5 = {a,b,c...}等价于v5{a,b,c...}
 如果初始化时使用了花括号的形式但是提供的值又不能用来列表初始化,就要考虑用这样的值来构造vector对象了
 例:vector<string> v1{10};
   vector<string> v2{10,"hi"};
+  
+直接初始化繁琐的时候使用push_back()函数:
+例:vector<int> v2;
+   for(int i = 0; i != 100; ++i)
+      v2.push_back(i);
+
+  string word;
+  vector<string> text;
+  while(cin >> word){
+      text.push_back(word);
+  }
