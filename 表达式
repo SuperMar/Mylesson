@@ -26,3 +26,9 @@ int k = {3.14};  //错误
 
 赋值运算符满足右结合律; in ival, jval; ival = jval = 0;
 
+递增递减运算符:int i = 0, j; j = ++i; //j = 1, i = 1 前置版本得到递增之后的值  j = i++; // j = 1, i = 2后置版本得到递增之前的值
+
+auto pbeg = v.begin();
+while(pbeg != v.end() && *beg >= 0)
+    cout << *pbeg++ << endl;   //输出当前值并将pbeg向前移动一个元素
+    
