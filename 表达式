@@ -41,4 +41,3 @@ string finalgrade = (grade < 60) ? "fail" : "pass";  //只对其中一个表达�
 
 条件运算符允许嵌套:
 string finalgrade = (grade > 90) ? "high grade" : (grade < 60) ? "fail" : "pass";
-
