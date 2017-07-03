@@ -41,3 +41,18 @@ string finalgrade = (grade < 60) ? "fail" : "pass";  //只对其中一个表达�
 
 条件运算符允许嵌套:
 string finalgrade = (grade > 90) ? "high grade" : (grade < 60) ? "fail" : "pass";
+
+位运算符作用于整数类型的对象(如果它的值是小整形):~ << >> & ^ |
+
+sizeof运算符:返回一条表达式或一个类型名字所占的字节数
+sizeof运算符满足右结合率,运算符的运算对象有两种形式sizeof (type); sizeof expr; //实际返回表达式结果类型的大小
+
+逗号运算符:含有两个运算对象,按照从左向右的顺序依次求值,首先对左侧的表达式求值,然后将求值结果丢弃掉,逗号运算符真正的结果是右侧表达式的值
+
+算数运算符整型提升
+
+包含常量整数值0或者字面值nullptr能转换成任意指针类型,指向任意非常量的指针能转换成void*,指向任意对象的指针能转换成const void*
+
+强制类型转换:static_cast, dynamic_cast, const_cast, reinterpret_cast
+
+
