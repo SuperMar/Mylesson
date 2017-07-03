@@ -31,4 +31,14 @@ int k = {3.14};  //错误
 auto pbeg = v.begin();
 while(pbeg != v.end() && *beg >= 0)
     cout << *pbeg++ << endl;   //输出当前值并将pbeg向前移动一个元素
-    
+
+成员访问运算符优先级低于点运算符:*p.size()  //错误
+p->size();  //箭头运算符
+(*p).size(); //点运算符
+
+条件运算符:cond?expr1:expr2;
+string finalgrade = (grade < 60) ? "fail" : "pass";  //只对其中一个表达式求值
+
+条件运算符允许嵌套:
+string finalgrade = (grade > 90) ? "high grade" : (grade < 60) ? "fail" : "pass";
+
