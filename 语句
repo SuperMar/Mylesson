@@ -1,2 +1,66 @@
 空语句 ;
 复合语句 block 一个块就是一个作用域,在块中引入的名字智能在块内部以及嵌套在块中的子块里访问,名字从名字定义处开始,到名字所在块的结尾
+
+switch语句:
+switch语句首先对括号里的表达式求值,表达式可以是一个初始化的变量声明,表达式的值转换成整数类型,然后与每个标签的值比较
+如果表达式与某个case标签的值匹配成功,程序从该标签之后的第一条语句开始执行,直到到达了switch的结尾或者是遇到一条break语句为止
+case标签必须是整型常量表达式,标签不应单独出现
+default也是一种特殊的case标签,default标签后面必须跟上一条空语句或一个空块
+switch(ch)
+{
+    case 'a': case 'e': case 'i': case 'o': case 'u':
+        ++vowelCnt;
+        break;
+}
+一般不要省略case分支最后的break语句,如果没有break语句,最好加一段注释说清楚程序的逻辑
+switch语句不是非得在最后一个标签后面写上break,但是为了安全起见,最好这么做
+switch内部变量的定义,注意switch的执行流程有可能会跨过某些case标签
+迭代语句通常称为循环,while和for语句在执行循环体之前检查条件,do while语句先执行循环体,然后再检查条件
+
+while语句:
+while(condition)
+    statement
+statement常常是一个块(block)
+定义在while条件部分或者while循环体内的变量每次迭代都经历从创建到销毁的过程，当不知道迭代多少次时,使用while循环比较合适
+
+传统for语句:
+for(inti-statemen;condition;expression)    //for语句头
+    statement
+init-statement必须是声明语句,表达式语句或者空语句    //for语句中定义的对象只在for循环体内可见
+
+范围for语句:    //不能通过范围for语句增加vector对象(或者其他容器)的元素,范围for预留了end()的值
+for(declaration:expression)    //expression表示的必须是一个序列(初始值列表,数组,vector或string类型对象)
+    statement                  //对序列中的元素执行写操作,循环变量必须声明成引用类型
+每次迭代都会重新定义循环控制变量,并将其初始化成序列中的下一个值,之后才会执行statement,所有元素处理完毕后循环终止
+
+do while语句:   //不管条件的值如何都至少执行一次循环
+do
+    statement
+while(condition);   //先执行语句后判断条件,所以不允许在条件部分定义变量
+
+跳转语句:
+break, continue, goto, return
+
+break语句:
+负责终止离它最近的while,do while,for,或switch语句,并从这些语句之后的第一条语句开始继续执行
+break语句只能出现在迭代语句或者switch语句内部(包括嵌套在此类循环里的语句或块的内部)
+break语句的作用范围仅限于最近的循环或者switch
+
+continue语句:
+终止最近的循环中的当前迭代并立即开始下一次迭代
+continue语句智能出现在for,while和do while循环的内部(或者嵌套在此类循环的语句或块的内部)
+continue语句也仅作用于离它最近的循环,只有当switch语句嵌套在迭代语句内部时,才能在switch里使用switch
+
+goto语句:
+从goto语句无条件跳转到同一函数内的另一条语句
+goto label;   //其中label是用与标识一条语句的标识符 end: return; 带标签语句,可以作为goto的目标,标签标识符可以和程序中其他实体标识符使重名
+//begin:
+    int sz = get_size();
+    if(sz <= 0){
+        goto begin;
+    }
+goto语句执行后将销毁sz,因为跳回到begin的动作跨过了sz的定义语句,所以sz将重新定义并初始化
+
+try语句块和异常处理:
+throw表达式:
+
