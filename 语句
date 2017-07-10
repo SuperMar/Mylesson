@@ -62,5 +62,20 @@ goto label;   //其中label是用与标识一条语句的标识符 end: return; 
 goto语句执行后将销毁sz,因为跳回到begin的动作跨过了sz的定义语句,所以sz将重新定义并初始化
 
 try语句块和异常处理:
-throw表达式:
+throw 表达式:
+if(item1.isbn()!=item2.isbn())
+       throw runtime_error("Data must refer to same ISBN");
+cout << item1 + item2 << endl;
+如果ISBN不一样就抛出一个异常,该异常是类型runtime_error的对象,抛出异常将终止当前的函数,并把控制权转移给能处理该异常的代码
+runtime_error是标准库异常类型的一种,定义在stdexcept头文件中
 
+try语句块:  //try语句块内声明的变量在块外部无法访问,特别是在catch子句内也无法访问
+try{
+    program-statements
+} catch (exception-declaration) {
+    handler-statements
+} catch (exception-declaration) {
+    handler-statements
+}
+
+terminate标准库函数 程序非正常退出
