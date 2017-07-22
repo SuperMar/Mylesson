@@ -1,0 +1,13 @@
+函数形参调用时才申请,函数执行完毕即销毁,()函数调用,函数返回值,函数名,执行体,函数为了代替较复杂的代码块
+C++尽量使用传引用代替传指针操作实参的值,不需改变形参的值时,尽量使用const <T> &
+函数内部变量static(静态局部变量)在函数执行完毕仍然保留改变后的值
+分离式编译:fact.h fact.cc factMain.cc, 函数声明在fact.h 函数定义在fact.cc, fact.cc包含fact.h, cc factMain.cc fact.cc
+函数可以多次声明,不可多次定义
+函数执行时,main()将控制权交给函数,main()暂停,执行完毕,控制权回到main()
+void fcn(const int i) {}
+void fcn(int) {}            //错误,重复定义
+C++允许定义若干具有相同名字的函数,前提是不同函数的形参列表有明显的区别
+形参初始化等同于变量初始化
+把函数不会改变的形参定义成普通引用是一种常见错误,极大限制函数所能接受的实参类型,例:不能把const对象,字面值等需要类型转换的对象传递给普通的引用形参
+string::size_type find_char(string &s, char c, string::size_type &occurs);
+find_char("Hello World", 'o', ctr);  //编译错误
