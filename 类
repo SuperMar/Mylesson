@@ -1,0 +1,26 @@
+成员函数的声明必须在类的内部,定义既可以在类的内部,也可以在类的外部
+定义在类内部的函数是隐式的inline函数
+this指针:
+total.isbn() //Sales_data::isbn(&total)
+this = &total
+this指针是一个常量指针,不允许改变this中保存的地址
+编译器首先编译成员的声明,然后才轮到成员函数体
+在类的外部定义成员函数:
+double Sales_data::avg_price() const {
+    if(units_sold)
+        return revenue/units_sold;
+    else
+        return 0;
+}
+
+构造函数:构造函数的任务是初始化类的数据成员,只要类的对象被创建,就会执行构造函数
+构造函数的名字和类名相同,构造函数没有返回类型
+类可以包含多个构造函数,不同的构造函数之间必须在参数数量或参数类型上有所区别
+构造函数不能声明成const
+只有当类没有声明任何构造函数时,编译器才会自动的生成默认构造函数
+如果类包含有内置类型或者复合类型的成员,则只有当这些成员全都被赋予了类内的初始值时,这个类才适合于使用合成的默认构造函数
+Sale_data() = default; 默认行为构造函数
+
+构造函数初始值列表:Sales_data(const std::string &s, unsigned n, double p):bookNo(s), units_sold(n), revenue(p*n) {}
+
+使用class和struct定义类唯一的区别就是默认的访问权限
