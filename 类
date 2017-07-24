@@ -24,3 +24,43 @@ Sale_data() = default; 默认行为构造函数
 构造函数初始值列表:Sales_data(const std::string &s, unsigned n, double p):bookNo(s), units_sold(n), revenue(p*n) {}
 
 使用class和struct定义类唯一的区别就是默认的访问权限
+
+友元函数:
+class Sales_data{
+friend Sales_data add(const Sales_data&, const Sales_data&);
+friend std::istream &read(std::istream&, Sales_data&);
+friend std::ostream &print(std::ostream&, const Sales_data&);
+};
+
+友元声明只能出现在类定义的内部,但是在类内出现的具体位置不限，友元不受它所在区域访问控制级别的约束
+
+友元的声明仅仅指定了访问的权限,而非一个通常意义上的函数声明
+
+class Screen{
+public:
+    typedef std::string::size_type pos;
+    Screen() = default;
+    Screen(pos ht, pos wd, char c): height(ht), width(wd),
+    contents(ht * wd, c) { }
+    char get() const
+        { return contents[cursor];}
+    inline char get(pos ht, pos wd) const;
+    Screen &move(pos r, pos c);
+private:
+    pos cursor = 0;
+    pos height = 0, width =0;
+    std::string contents;
+}
+//定义在类内部的成员函数是自动inline的
+Screen &Screen::move(pos r, pos c)
+{
+    pos row = r * width;
+    cursor = row + c;
+    return *this;
+}
+char Screen::get(pos r, pos c) const
+{
+    pow row = r * width;
+    return contents[row + c];
+}
+
