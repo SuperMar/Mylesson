@@ -50,7 +50,7 @@ private:
     pos cursor = 0;
     pos height = 0, width =0;
     std::string contents;
-}
+};
 //定义在类内部的成员函数是自动inline的
 Screen &Screen::move(pos r, pos c)
 {
